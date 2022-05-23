@@ -1,0 +1,200 @@
+header {
+  width: 100%;
+  position: fixed;
+
+  z-index: 999;
+
+  .navbar {
+    background-color: var(--bs-white);
+    border-radius: 15px;
+
+    height: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+
+
+    .nav-breadcrumb {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      color: var(--main-color);
+
+      .breadcrumb {
+        margin: 0;
+        display: flex;
+        list-style: none;
+        margin-left: 41px;
+
+        &-item {
+          margin: 0 2.5px;
+
+          &::first-letter {
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      &-page {
+        margin-left: 42px;
+
+        &::first-letter {
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .menu {
+      flex: 0.2;
+      cursor: pointer;
+      // display: flex;
+
+      .header-btn {
+        display: flex;
+        width: 200px;
+        cursor: pointer;
+
+        .profile-btn {
+          padding: 0;
+          border: 0;
+          background-color: transparent;
+          display: flex;
+          align-items: center;
+          padding-left: 12px;
+          border-left: 2px solid #484a4dd2;
+
+          img {
+            width: 32px;
+            height: 32px;
+            object-fit: cover;
+            border-radius: 50%;
+            // margin-right: 0px;
+          }
+          button {
+            color: var(--main-color);
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 700;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+          }
+        }
+        /* @Media 700px */
+        @media screen and (max-width: 750px) {
+          .profile-btn {
+            // display: none;
+            width: 100px;
+          }
+          .profile-btn button {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  /* Dropdown */
+  .dropdown {
+    cursor: pointer;
+    position: absolute;
+    top: 65px;
+    width: 190px;
+    transform: translateX(-45%);
+    background-color: var(--dropdown-bg);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    padding: 0.5rem;
+    overflow: hidden;
+    z-index: 9999;
+
+    .icon-button {
+      --button-size: calc(var(--nav-size) * 0.5);
+      /* background-color: #484a4d; */
+      background-color: #dadce1;
+      width: var(--button-size);
+      height: var(--button-size);
+      border-radius: 50%;
+      padding: 8px;
+      margin: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        filter: brightness(1.2);
+      }
+    }
+
+    .menu {
+      width: 100%;
+
+      &-text {
+        margin-left: 10px;
+      }
+      &-item {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        border-radius: var(--border-radius);
+        transition: backgroun var(--speed);
+        color: #474a4d;
+        padding: 0 0.5rem;
+        text-decoration: none;
+
+        &:hover {
+          background-color: #dadce1;
+          color: #000;
+        }
+        span {
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+        }
+        .icon-button {
+          font-size: 20px;
+        }
+        .icon-right {
+          margin-left: 10px;
+        }
+      }
+
+      &-primary-enter {
+        position: absolute;
+        transform: translateX(-110%);
+
+        &-active {
+          transform: translateX(0%);
+          transition: all var(--speed) ease;
+        }
+      }
+      &-primary-exit {
+        position: absolute;
+
+        &-active {
+          transform: translateX(-110%);
+          transition: all var(--speed) ease;
+        }
+      }
+
+      &-secondary-enter {
+        transform: translateX(110%);
+
+        &-active {
+          transform: translateX(0%);
+          transition: all var(--speed) ease;
+        }
+      }
+      &-secondary-exit {
+        position: absolute;
+
+        &-active {
+          transform: translateX(110%);
+          transition: all var(--speed) ease;
+        }
+      }
+    }
+  }
+}

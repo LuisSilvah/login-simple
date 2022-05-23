@@ -1,0 +1,151 @@
+.main-container {
+    flex-grow: 1;
+    padding: 20px;
+    overflow: auto;
+    border-radius: 20px;
+    margin: 70px 10px 10px 10px;
+    background-color: var(--main-bg);
+
+    /* Wrapprer-cover */
+    .wrapprer-cover {
+        position: relative;
+        height: 30vh;
+        min-height: 250px;
+        max-height: 350px;
+        cursor: pointer;
+
+        z-index: 1;
+
+        .copaLF-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 4px;
+        }
+        .copaLF-before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            /* background-image: url("https://images.unsplash.com/photo-1508247967583-7d982ea01526?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"); */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            filter: blur(50px);
+            opacity: 0.7;
+        }
+    }
+
+    .stats {
+        width: 100%;
+        margin: 20px 0;
+
+        .title {
+            margin: 20px 0 10px 5%;
+            font-size: 2rem;
+        }
+
+        .stats-container {
+            .stats-total {
+                padding: 10px;
+                height: 50px;
+                display: flex;
+                flex-wrap: wrap;
+
+                .stats-box {
+                    padding: 0 20px;
+                    min-width: 150px;
+                    display: flex;
+                    align-items: center;
+
+                    .number {
+                        font-size: 2rem;
+                        color: var(--bs-gray-700);
+                    }
+
+                    .line {
+                        margin: 0 5px;
+                        font-weight: bold;
+                    }
+
+                    .text {
+                        font-size: 1.2rem;
+                        color: var(--bs-gray-800);
+                    }
+                }
+            }
+
+            .scorer {
+                padding: 10px;
+                display: flex;
+                align-items: center;
+
+                .scorer-goal {
+                    font-size: 4rem;
+                }
+
+                .scorer-description {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 10px;
+                    flex: 1;
+
+                    .scorer-team {
+                        display: flex;
+                        align-items: center;
+
+                        .team-image {
+                            width: 25px;
+                            height: 25px;
+                            margin-top: 2px;
+                            margin-right: 10px;
+                        }
+
+                        .team-name {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+
+                .player-image {
+                    margin-right: 20px;
+                    height: 100%;
+
+                    img {
+                        width: 80px;
+                        height: 100%;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+
+        .btn-stats {
+            margin-top: 40px;
+            height: 40px;
+            width: 35%;
+            text-align: center;
+
+            &:hover {
+                background-color: var(--bs-indigo);
+            }
+        }
+
+        @media screen and (max-width: 625px) {
+            .stats-box {
+                margin: 10px;
+            }
+
+            .scorer {
+                margin-top: 50px;
+            }
+        }
+    }
+}
